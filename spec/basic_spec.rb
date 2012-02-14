@@ -27,6 +27,11 @@ describe "stub methods" do
     MyClass.stub(:a_class_method).and_return("a stubbed method")
     MyClass.a_class_method.should match("a stubbed method")
   end
+
+  it "should not persist class method stubs between blocks" do
+    MyClass.a_class_method.should match("default class impl")
+  end
+
   it "invoking stub on class does not affect instance methods" do
     MyClass.stub(:an_instance_method).and_return("a stubbed method")
     inst = MyClass.new
