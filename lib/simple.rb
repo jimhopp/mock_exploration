@@ -14,4 +14,8 @@ class MyClass
     "default instance impl for #{@name}"
   end
 
+  def one_parm_instance_method(arg)
+    "default instance impl for #{@name} invoked with #{arg}"
+  end
+
 end
